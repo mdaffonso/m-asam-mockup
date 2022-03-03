@@ -1,0 +1,95 @@
+.SpecialOffer {
+
+  a {
+    text-decoration: none;
+    color: unset;
+  }
+
+  .Banner {
+    display: grid;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.5rem;
+    border: 1px solid #e3e3e3;
+
+    grid-template-areas:
+      "stamp"
+      "body";
+
+    @media (min-width: 767px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "body stamp";
+    }
+
+    div:first-of-type {
+      grid-area: body;
+      padding: 2rem 4rem;
+
+      p {
+        font-family: "Playfair Display", cursive;
+        font-size: 1.75rem;
+        font-style: italic;
+      }
+
+      p[data-role="button"] {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        font-style: normal;
+
+        display: block;
+        max-width: max-content;
+        text-decoration: none;
+        padding: 0.25rem 3rem;
+        background-color: #c92976;
+        box-shadow: 0 0.125rem 0.25rem rgba(201, 41, 118, 0.5);
+        color: white;
+        font-weight: 500;
+        border-radius: 2rem;
+        border: none;
+        margin-top: 2rem;
+      }
+    }
+
+    div:last-of-type {
+      grid-area: stamp;
+      background-color: #c92976;
+      color: white;
+      
+      margin: 1.5rem;
+      padding: 1rem;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      place-self: flex-start;
+      text-align: center;
+
+      display: grid;
+      place-content: center;
+
+      opacity: 0.85;
+
+      transform: rotate(-15deg);
+      box-shadow: 
+        0 0 0 0.125rem beige,
+        0 0 0 0.5rem #c92976;
+
+      p[data-type="from"] {
+        font-size: 1.125rem;
+        color: black;
+        text-decoration: line-through;
+        line-height: 0.5;
+      }
+
+      p[data-type="to"] {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      small {
+        font-size: 0.6rem;
+        font-weight: 500;
+      }
+    }
+  }
+}

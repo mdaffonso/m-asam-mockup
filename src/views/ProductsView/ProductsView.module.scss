@@ -1,0 +1,82 @@
+.Main {
+  display: grid;
+  grid-template-areas:
+    "breadcrumbs"
+    "banner" 
+    "title"
+    "filters"
+    "order"
+    "products";
+    
+    @media (min-width: 1024px) {
+      grid-template-columns: 5fr 10fr max-content;
+      grid-template-rows: min-content min-content min-content 1fr;
+      grid-template-areas: 
+        "breadcrumbs breadcrumbs breadcrumbs"
+        "filters banner banner"
+        "filters title order"
+        "filters products products";
+  }
+}
+
+.Banner {
+  grid-area: banner;
+  
+  @media (min-width: 1024px) {
+    padding-top: 3.25rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.Filters,
+.Categories {
+  padding: var(--structure-p-sm);
+
+  ul {
+    list-style-type: none;
+
+    &[data-hide="true"] li {
+      display: none;
+    }
+  }
+}
+
+.Sidebar {
+  grid-area: filters;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.Title {
+  grid-area: title;
+
+  h2 {
+    font-weight: 500;
+  }
+}
+
+.Order {
+  grid-area: order;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.Title,
+.Order {
+  margin: 1rem 0;
+  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    border-bottom: 1px solid #c0c0c0;
+  }
+}

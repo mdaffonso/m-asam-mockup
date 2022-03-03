@@ -1,0 +1,84 @@
+.AddToCart {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.AddToCartWrapper {
+  display: flex;
+  align-items: stretch;
+  font-size: 1.25rem;
+
+  span {
+    padding: 0 1em;
+    background: #f2f2f2;
+    border: 1px solid #d5d5d5;
+    border-left: none;
+    border-right: none;
+  }
+
+  button {
+    position: relative;
+    border: 1px solid #d5d5d5;
+    background: white;
+    width: 1.5em;
+    font-size: inherit;
+    
+    &:disabled {
+      &::before,
+      &::after {
+        background: #d6d6d6;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+      width: 0.75em;
+      height: 0.125em;
+
+      background: #c92976;
+    }
+
+    &:first-of-type {
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+    
+    &:last-of-type {
+      border-radius: 0 0.5rem 0.5rem 0;
+
+      &::before {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+  }
+}
+
+.AddToCartButton {
+  background: #c92976;
+  border-radius: 2rem;
+  padding: 0.5em 2em;
+  border: none;
+  color: white;
+  font-size: 1.05rem;
+  box-shadow: 0 0.125rem 0.125rem rgba(201, 41, 118, 0.35);
+  transition: background-color 200ms ease-in-out;
+
+  &[data-large="true"] {
+    flex-grow: 1;
+    font-size: 1.1rem;
+    padding: 0.75em 3em;
+    font-weight: 600;
+  }
+
+  &:hover {
+    background: #e93f91;
+  }
+}

@@ -1,0 +1,146 @@
+.HeaderDescription {
+  display: flex;
+  flex-direction: column;
+
+  .Brand {
+    font-weight: 300;
+  }
+
+  .Product {
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+
+  .Reviews {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #6d6d6d;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e3e3e3;
+  }
+
+  .Description {
+    h3 {
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+
+    ul {
+      list-style-type: none;
+
+      li {
+        position: relative;
+        color: #6d6d6d;
+        padding: 0.5rem 0;
+        padding-left: 1.5rem;
+        font-size: 0.85rem;
+
+        strong {
+          font-weight: 500;
+          color: black;
+        }
+
+        &::before {
+          content: "✓";
+          color: #a4d65e;
+          display: block;
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .PriceBlock {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-top: 1px solid #e5e5e5;
+    gap: 1rem;
+
+    div:first-of-type {
+      flex-grow: 1;
+      font-size: 2rem;
+      display: flex;
+      flex-direction: column;
+      width: max-content;
+
+      strong {
+        font-weight: 500;
+        width: max-content;
+
+        &[data-sale="true"] {
+          color: #c92976;
+        }
+
+        &:first-of-type[data-sale="true"] {
+          font-size: 1rem;
+          text-decoration: line-through;
+          color: #6d6d6d;
+          font-weight: 400;
+        }
+      }
+    }
+
+    div:last-of-type {
+      text-align: right;
+      flex-grow: 1;
+      font-size: 0.75rem;
+
+      small {
+        display: block;
+      }
+    }
+  }
+
+  .CartBlock {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    border-top: 1px solid #e5e5e5;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 1rem 0 0;
+      color: #c92976;
+      text-align: center;
+      text-decoration: none;
+
+      span:last-of-type {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .ShippingBlock {
+    position: relative;
+    padding: 1rem 0;
+    padding-left: 1.5rem;
+    border-top: 1px solid #e5e5e5;
+    font-size: 0.75rem;
+    color: #6d6d6d;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 0.75rem;
+      height: 0.75rem;
+
+      border-radius: 50%;
+      background-color: #a4d65e;
+    }
+
+    a {
+      color: unset;
+    }
+  }
+}

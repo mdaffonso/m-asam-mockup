@@ -1,0 +1,9 @@
+.MenuItemList {
+  li {
+    display: flex;
+
+    * {
+      flex-grow: 1;
+    }
+  }
+}

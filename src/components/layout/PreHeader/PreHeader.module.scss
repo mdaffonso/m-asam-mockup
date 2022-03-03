@@ -1,0 +1,27 @@
+.PreHeader {
+  font-size: 0.75rem;
+  background: #f5f5f5;
+  color: #53565a;
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
+  }
+
+  .Container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    min-height: 2rem;
+    list-style-type: "\2713";
+
+    li {
+      display: none;
+      padding-left: 0.5rem;
+  
+      @media (min-width: 1081px) {
+        display: list-item;
+      }
+    }
+  }
+}

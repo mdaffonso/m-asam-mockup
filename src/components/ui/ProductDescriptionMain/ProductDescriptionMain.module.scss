@@ -1,0 +1,51 @@
+.Main {
+  margin: 2rem 0;
+}
+
+.Tabs {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  border-bottom: 1px solid #d6d6d6;
+  margin: 0 0 2rem;
+  padding-bottom: 1rem;
+
+  max-width: 100%;
+  overflow-x: auto;
+
+  @media (min-width: 1024px) {
+    justify-content: center;
+  }
+
+  button {
+    position: relative;
+    padding: 0.5rem 1rem;
+    background: none;
+    border: none;
+    font-size: 1.125rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 0.125rem;
+      background: #a4d65e;
+      width: 0;
+      border-radius: 1rem;
+
+      transition: width 200ms ease-in-out;
+    }
+
+    &:hover,
+    &[data-active="true"] {
+      font-weight: 500;
+    }
+
+    &:hover::after,
+    &[data-active="true"]::after {
+      width: 100%;
+    }
+  }
+}

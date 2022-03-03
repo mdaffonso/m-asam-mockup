@@ -1,0 +1,90 @@
+.CategoriesBlock {
+  background: #f5f5f5;
+  padding: 1.5rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid #d6d6d6;
+
+  input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  li {
+    display: flex;
+  
+    label {
+      position: relative;
+      width: 100%;
+      padding: 0.25rem 1rem 0.25rem 3.5rem;
+      letter-spacing: -0.5px;
+      font-weight: 500;
+      border-radius: 0.25rem;
+      word-wrap: break-word;
+      cursor: pointer;
+      transition: 200ms ease-in-out;
+      transition-property: background-color, color;
+
+      &:hover {
+        background: #c92976;
+        color: white;
+
+        &::after {
+          transform: scale(1);
+          opacity: 0.25;
+        }
+
+        span {
+          color: white;
+        }
+      }
+
+      span {
+        font-weight: 400;
+        color: #6d6d6d;
+        transition: color 200ms ease-in-out !important;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0.2rem;
+        left: 1.5rem;
+
+        height: 1.5rem;
+        width: 1.5rem;
+
+        background: white;
+        border: 1px solid #d6d6d6;
+        border-radius: 0.5rem;
+      }
+
+      &::after {
+        content: "✓";
+        color: #c92976 !important;
+        position: absolute;
+        left: 1.85rem;
+        top: 0.25rem;
+        opacity: 0;
+        transform-origin: center;
+        transform: scale(0);
+        transition: 
+          transform 500ms cubic-bezier(0,1.89,.64,.66),
+          opacity 200ms ease-in-out;
+        z-index: 5;
+      }
+    }
+
+    input:checked {
+      + label::after {
+        transform: scale(1);
+        opacity: 1 !important;
+      }
+
+      + label::before {
+        border-color: #c92976;
+        outline: 1px solid #c92976;
+      }
+    } 
+  }
+}

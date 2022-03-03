@@ -1,0 +1,7 @@
+.Products {
+  grid-area: products;
+  padding: 0.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.5rem;
+}

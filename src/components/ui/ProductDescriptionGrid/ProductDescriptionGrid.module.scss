@@ -1,0 +1,47 @@
+.Statements {
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.Statement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+
+  p {
+    line-height: 1.5;
+    max-width: 40ch;
+  }
+
+  p:first-of-type {
+    font-family: "Playfair Display", cursive;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: italic;
+
+    &::before {
+      content: "“ ";
+    }
+  }
+
+  p:last-of-type {
+    &::after {
+      content: " ”*";
+    }
+  }
+
+  small {
+    font-size: 0.6rem;
+    color: #6d6d6d;
+
+    &::before {
+      content: "*"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.Ribbon {
+  position: relative;
+  isolation: isolate;
+  color: white;
+  padding: 0.25em 1em;
+  width: max-content;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.65rem;
+  margin: 0 auto;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color);
+    z-index: -1;
+  }
+
+  &::before {
+    transform: skew(25deg);
+  }
+
+  &::after {
+    transform: skew(-25deg);
+  }
+}

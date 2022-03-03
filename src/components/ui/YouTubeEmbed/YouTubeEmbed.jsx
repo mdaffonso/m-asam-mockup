@@ -1,4 +1,4 @@
-import styles from "./YoutubeEmbed.module.scss"
+import styles from "./YouTubeEmbed.module.scss"
 export const YoutubeEmbed = ({ embed, title, ...otherProps }) => {
   const embedId = embed.replace("https://www.youtube.com/watch?v=", "")
 
